@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: fdmhn07cb-python-gitops
+  description: This is GitOps manifest for fdmhn07cb-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: fdmhn07cb-python
+    janus-idp.io/tekton: fdmhn07cb-python 
+    backstage.io/kubernetes-id: fdmhn07cb-python 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:fdmhn07cb-python
